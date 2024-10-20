@@ -1,0 +1,24 @@
+{% extends 'base.html.twig'%}
+  {% block body %}
+<h1>bonjour twin</h1>
+{% set a=5 %}
+{% set email='nour@esprit.tn'%}
+
+{{a}} <br> {{email}}
+
+{% set tab=[1,5,6,7,4,7,8,9,0,3,4,5,7]%}
+{{tab[3]}}
+{% for i in 0..12 %}
+{{tab[i]}} <br>
+{% endfor %}
+
+{% for i in 0..tab|length-1 %}
+{{tab[i]}} <br>
+{% endfor %}
+
+<BR>
+{{min(tab)}} {{max(tab)}}
+     {#{ constant('Twig\\Environment::VERSION') }#}
+     {{ app.request.server.get("SERVER_NAME") }}
+
+{% endblock %}

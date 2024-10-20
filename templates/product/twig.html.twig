@@ -1,0 +1,49 @@
+<link  rel= "stylesheet" href="{{asset('file.css')}}", type = "text/css">
+
+<h1>bonjour twig</h1>
+<a href="{{path('app_twin',{'id':age})}}"> link to twin <a>
+{{n}} <br>
+{{'your age is ' ~ age}} <br>
+{{'your date of birth is ' ~ dateN}} <br>
+{{'new date format  ' ~ date(dateN)|date("m/d/Y")}} <br>
+{% if date(dateN)>date() %}
+    {{n}}
+{% else %}
+    {{'condition met'}}
+{% endif %}
+{{dump(books)}}
+{% for b in books %}
+    {{b.id}}
+    {{b.title}}
+    {{b.author}} <br>
+{% endfor %}
+
+{% if books is empty %}
+    {{'no data'}}
+{% else %}
+    {{'data'}}
+{% endif %}
+
+{% if age < 10 %}
+    {{'ENFANT'}}
+{% else %}
+    {{'ADULT'}}
+{% endif %}
+<br>
+{% if n starts with 'p' %}
+    {{'starts with M'}}
+{% endif %}
+
+{{n|upper }}
+{% apply upper %}
+ncorporating an AI paragraph writing 
+tool into your toolkit can revolutionize 
+the way you approach content creation for
+ several compelling reasons: 
+ {% endapply %}
+1. Efficiency Boost: Crafting con
+<br>
+nom: <input type="text" name="nom" class="form-control" >
+age: <input type="text" name="age" class="form-control" >
+
+<input type="submit" value="okk" class="btn btn-primary">

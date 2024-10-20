@@ -1,0 +1,24 @@
+<h1>books list</h1>
+{{dump(books)}}
+
+<table class="tableList">
+    <tr>
+        <th>Id</th>
+        <th> title</th>
+        <th>date</th>
+         <th>enabled</th>
+          <th>author</th>
+    </tr>
+ {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.pubdate|date('m/d/Y')}}</td>
+            <td>{{book.enabled?'yes':'no'}}</td>
+            <td>{{book.authorid.username}}</td>
+            <td><a href=""> update</a>   
+            {#code #}
+            <a href="{{path('app_delete',{'id':book.id})}}"> delete</a>      </td>
+        </tr>
+  {% endfor %}
+</table>

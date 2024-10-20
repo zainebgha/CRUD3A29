@@ -1,0 +1,20 @@
+<h1>auhtors list</h1>
+{{dump(authors)}}
+
+<table class="tableList">
+    <tr>
+        <th>Id</th>
+        <th> username</th>
+        <th>email</th>
+    </tr>
+ {% for author in authors %}
+        <tr>
+            <td>{{author.id}}</td>
+            <td>{{author.username}}</td>
+            <td>{{author.email}}</td>
+            <td><a href=""> update</a>   
+            {#code #}
+            <a href="{{path('app_delete',{'id':author.id})}}"> delete</a>      </td>
+        </tr>
+  {% endfor %}
+</table>
